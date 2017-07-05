@@ -11,17 +11,19 @@ class SearchBar extends Component {
     // we only update our state inside the constructor function.
     this.state = { term: '' };
   }
-
+  // this is the syntax we use to define a methods on a class. Notice it's different than a javascript object (no colon)
   render() {
     return (
       <div>
         <input
+          // made the input element a controlled component by telling it to receive its value from state:
           value={this.state.term}
-          onChange={event => this.setState({ term: event.target.value })} />
+          onChange={event => this.setState({ term: event.target.value })}
+        />
       </div>
     )
   }
 
 }
 
-export default SearchBar;
+export default SearchBar; // only exporting our SearchBar component
