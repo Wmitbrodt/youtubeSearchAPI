@@ -13,7 +13,7 @@ class App extends Component {
     // returns the list of videos
     this.state = { videos: [] };
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+    YTSearch({key: API_KEY, term: 'john frusciante'}, (videos) => {
       //console.log(videos);
       // we can update the state with the new list of videos:
       //this.setState({ videos: videos });
