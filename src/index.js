@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -31,6 +32,11 @@ class App extends Component {
         selectedVideo: videos[0]
       });
     });
+  }
+
+  render() {
+    // created a new arrow function, passed it to debounce, so it will only call videosearch every 300 milliseconds
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
   }
 
   render() {
