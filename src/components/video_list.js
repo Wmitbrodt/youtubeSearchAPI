@@ -7,7 +7,12 @@ const VideoList = (props) => {
   const videoItems = props.videos.map((video) => {
     // map over each video in the array and create a video list item:
                           // provide a key for each element in the list
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+      <VideoListItem
+        onVideoSelect={props.onVideoSelect}
+        key={video.etag}
+        video={video} />
+    );
   });
   return (
     <ul className="col-md-4 list-group">

@@ -12,14 +12,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     // returns the list of videos
-    this.state = { videos: [] };
+    this.state = {
+      videos: [],
+      selectedVideo: null
+    };
 
     YTSearch({key: API_KEY, term: 'john frusciante'}, (videos) => {
       //console.log(videos);
       // we can update the state with the new list of videos:
       //this.setState({ videos: videos });
       // when the key and value are the same e.g., videos: videos, we can shorten with ES6 syntax: videos
-      this.setState({ videos });
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
     });
   }
 
@@ -27,8 +33,12 @@ class App extends Component {
     return ( // if you don't use parenthesis here, make sure the <div> is on the first line, beside the return
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]} />
-        <VideoList videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+          // 👇🏻 has one purpose, to just update app's state. Takes a video, and updates the selectedVideo
+          // it's passed in as property to videolist. 
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos} />
       </div>
     );
   }
