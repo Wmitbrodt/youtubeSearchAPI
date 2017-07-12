@@ -14,7 +14,7 @@ class SearchBar extends Component {
   // this is the syntax we use to define a methods on a class. Notice it's different than a javascript object (no colon)
   render() {
     return (
-      <div>
+      <div className="search-bar">
         <input
           // made the input element a controlled component by telling it to receive its value from state:
           value={this.state.term}
