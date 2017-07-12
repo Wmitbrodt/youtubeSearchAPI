@@ -17,7 +17,11 @@ class App extends Component {
       selectedVideo: null
     };
 
-    YTSearch({key: API_KEY, term: 'john frusciante'}, (videos) => {
+    this.videoSearch('red hot chili peppers');
+  }
+
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
       //console.log(videos);
       // we can update the state with the new list of videos:
       //this.setState({ videos: videos });
@@ -32,11 +36,11 @@ class App extends Component {
   render() {
     return ( // if you don't use parenthesis here, make sure the <div> is on the first line, beside the return
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           // 👇🏻 has one purpose, to just update app's state. Takes a video, and updates the selectedVideo
-          // it's passed in as property to videolist. 
+          // it's passed in as property to videolist.
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
           videos={this.state.videos} />
       </div>
