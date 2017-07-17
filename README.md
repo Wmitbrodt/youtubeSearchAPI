@@ -4,7 +4,7 @@
 
 Clone me 😜
 
-#GIT ⌨️
+###GIT###
 Checkout this repo, install dependencies, then start the gulp process with the following: 
 
 ```
