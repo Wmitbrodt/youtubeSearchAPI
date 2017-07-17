@@ -2,10 +2,10 @@
 
 ###Getting Started###
 
-Clone me ;)
+Clone me 😜
 
 ####Git#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+Checkout this repo, install dependencies, then start the gulp process with the following:  ⌨️
 
 ```
 	> git clone
